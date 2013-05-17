@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+<RelativeLayout
+     android:id="@+id/relativeMarket"
+     android:layout_width="fill_parent"
+     android:layout_centerHorizontal="true" 
+     android:gravity="center" 
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Market- " 
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" 
+        />
+
+    <TextView
+        android:id="@+id/choose_market"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true" 
+        android:layout_height="wrap_content"
+       android:layout_toRightOf="@+id/textView1"
+   android:text="Market" 
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeCurrency"
+     android:layout_width="fill_parent"
+     android:gravity="center" 
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeMarket">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:text="Currency="
+        android:textStyle="bold" 
+         android:layout_centerHorizontal="true" 
+      />
+
+    <TextView
+        android:id="@+id/choose_currence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true" 
+        android:text=" "
+         android:layout_toRightOf="@+id/textView2"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeRate"
+     android:layout_width="fill_parent"
+     android:gravity="center" 
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeCurrency">
+    <TextView 
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" 
+        android:text="Rate= "/>
+    <TextView android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_toRightOf="@+id/text3"
+         android:text="Rate"
+          android:layout_centerHorizontal="true" 
+        android:inputType="numberDecimal"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeQuantity"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center" 
+    android:layout_below="@id/relativeRate">
+    <TextView 
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true" 
+        android:text="Quantity= "/>
+    <TextView android:id="@+id/quantity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_toRightOf="@+id/text4"
+        android:text="Quantity"
+        android:inputType="numberDecimal"
+        />
+    </RelativeLayout>
+     <RelativeLayout
+     android:id="@+id/relativeRadio"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center" 
+    android:layout_below="@id/relativeQuantity">
+    
+         <TextView 
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" 
+        android:text="Action= "/>
+    <TextView android:id="@+id/action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text5"
+        android:layout_centerHorizontal="true" 
+        android:text="Action"
+        />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<RelativeLayout
+     android:id="@+id/relativeMarket"
+     android:layout_alignParentLeft="true"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Market" 
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"/>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeCurrency"
+     android:layout_alignParentLeft="true"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeMarket">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:text="Choose Currency"
+        android:textStyle="bold" 
+        android:layout_alignParentLeft="true"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        
+         android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeRate"
+     android:layout_alignParentLeft="true"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeCurrency">
+    <TextView 
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Rate"/>
+    <EditText android:id="@+id/rateEditbox"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Rate"
+         android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:inputType="numberDecimal"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+     android:id="@+id/relativeQuantity"
+     android:layout_alignParentLeft="true"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeRate">
+    <TextView 
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Quantity"/>
+    <EditText android:id="@+id/quantityEditbox"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+         android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:inputType="numberDecimal"
+        />
+    </RelativeLayout>
+     <RelativeLayout
+     android:id="@+id/relativeRadio"
+     android:layout_alignParentLeft="true"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/relativeQuantity">
+    <RadioGroup android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton android:id="@+id/sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell"/>
+        <RadioButton android:id="@+id/buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            android:checked="true"
+            />
+        
+    </RadioGroup>
+    </RelativeLayout>
+    <Button android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeRadio"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"/>
+    <CheckBox android:id="@+id/testingCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submitButton"
+        android:text="Testing"/>
+
+</RelativeLayout>
