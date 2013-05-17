@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.mnt.btcapi.BtcEApi;
 
@@ -36,25 +38,26 @@ import com.mnt.mtgoxapi.MtGApi;
 import com.mnt.utils.Currency;
 
 public class MainActivity extends Activity {
-Spinner marketSpinner,currencySpinner;
-Button submitButton;
-String pair;
-String marketType;
-EditText quantity,rate;
-CheckBox testingCheckbox;
-ProgressDialog dialog_;
-TextView market_value,currency_value,rate_value,quantity_value,action_value;
-String action;
-RadioButton buy;
-Map<String,String> requestMap;
+	Spinner marketSpinner,currencySpinner;
+	Button submitButton;
+	String pair;
+	String marketType;
+	EditText quantity,rate;
+	CheckBox testingCheckbox;
+	ProgressDialog dialog_;
+	TextView market_value,currency_value,rate_value,quantity_value,action_value;
+	String action;
+	RadioButton buy;
+	Map<String,String> requestMap;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		addItemsOfMarket();
+		
 		//addListenerOnSpinnerItemSelection();
 		marketSpinner = (Spinner) findViewById(R.id.spinner1);
 		currencySpinner=(Spinner)findViewById(R.id.spinner2);
+		addItemsOfMarket();
 		currencySpinner.setOnItemSelectedListener(onItemListner);
 		marketSpinner.setOnItemSelectedListener(listnerOfMArketValue);
 		submitButton = (Button)findViewById(R.id.submitButton);
@@ -95,6 +98,9 @@ Map<String,String> requestMap;
 				long arg3) {
 			pair=arg0.getItemAtPosition(arg2).toString();
 			pair=pair.replace("/","_").toLowerCase();
+			if(testingCheckbox.isChecked()){
+				Toast.makeText(MainActivity.this, pair, Toast.LENGTH_SHORT).show();
+			}
 			
 		}
 
@@ -103,6 +109,8 @@ Map<String,String> requestMap;
 			
 		}
 	};
+	
+	
 	
 	OnClickListener listner = new OnClickListener() {
 		
@@ -219,7 +227,6 @@ Map<String,String> requestMap;
 	
 	public void addItemsOfMarket() {
 		 
-		marketSpinner = (Spinner) findViewById(R.id.spinner1);
 		List<String> list = new ArrayList<String>();
 		list.add("BTC-E");
 		list.add("MT GOX");
